@@ -24,7 +24,7 @@ class Prices implements ApiInterface
      * Получение информации о ценах
      *
      * @param int $quantity 0 - товар с любым остатком, 1 - товар с ненулевым остатком, 2 - товар с нулевым остатком
-     * @return array
+     * @return array<int, array{nmId: integer, price: float, discount: integer, promocode: float}>
      */
     public function info(int $quantity = 0): array
     {
