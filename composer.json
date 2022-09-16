@@ -1,0 +1,40 @@
+{
+    "name": "mike-trueh/wb-openapi",
+    "description": "SDK for working with the Wildberries open API",
+    "type": "library",
+    "keywords": [
+        "wildberries",
+        "wb.ru",
+        "sdk",
+        "openapi"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mikhail Kryzhanovskiy",
+            "email": "mike.trueh@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.4.0"
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "autoload": {
+        "psr-4": {
+            "WbOpenApi\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/"
+        ]
+    }
+}
