@@ -1,0 +1,35 @@
+{
+    "data": {
+        "cards": [
+            {
+                "sizes": [
+                    {
+                        "techSize": "0",
+                        "skus": [
+                            "5032781142964"
+                        ]
+                    }
+                ],
+                "mediaFiles": [
+                    "http://imglink.com/imgOne.jpg"
+                ],
+                "colors": [
+                    "белый"
+                ],
+                "updateAt": "2022-08-10T10:16:52Z",
+                "vendorCode": "6000000001",
+                "brand": "Шанель",
+                "object": "Туалетная вода",
+                "nmID": 66964167
+            }
+        ],
+        "cursor": {
+            "offset": 0,
+            "limit": 1,
+            "total": 66964167
+        }
+    },
+    "error": false,
+    "errorText": "",
+    "additionalErrors": ""
+}

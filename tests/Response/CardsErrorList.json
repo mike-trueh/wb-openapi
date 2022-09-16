@@ -1,0 +1,15 @@
+{
+    "data": [
+        {
+            "object": "Блузка",
+            "vendorCode": "6000000001",
+            "updatedAt": "2022-06-15T14:37:13Z",
+            "errors": [
+                "Поля Рос. размер, Размер обязательны для заполнения"
+            ]
+        }
+    ],
+    "error": false,
+    "errorText": "",
+    "additionalErrors": ""
+}

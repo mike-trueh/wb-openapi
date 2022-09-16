@@ -1,0 +1,31 @@
+{
+    "data": [
+        {
+            "imtID": 50777914,
+            "nmID": 66964219,
+            "vendorCode": "6000000001",
+            "mediaFiles": [
+                "http://imglink.com/imgOne.jpg"
+            ],
+            "sizes": [
+                {
+                    "techSize": "40-41",
+                    "wbSize": "40-41",
+                    "price": 3999,
+                    "chrtID": 12300001,
+                    "skus": [
+                        "1000000001"
+                    ]
+                }
+            ],
+            "characteristics": [
+                {
+                    "Высота подошвы": 3.5
+                }
+            ]
+        }
+    ],
+    "error": false,
+    "errorText": "",
+    "additionalErrors": null
+}
