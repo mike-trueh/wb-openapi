@@ -33,11 +33,13 @@ class Content implements ApiInterface
     public function cardsList(int $limit = 10, int $offset = 0, string $searchValue = '', string $sortColumn = 'updateAt', bool $asc = false): ?array
     {
         return $this->client->post('content/v1/cards/list', [
-            'limit' => $limit,
-            'offset' => $offset,
-            'searchValue' => $searchValue,
-            'sortColumn' => $sortColumn,
-            'ascending' => $asc,
+            'sort' => [
+                'limit' => $limit,
+                'offset' => $offset,
+                'searchValue' => $searchValue,
+                'sortColumn' => $sortColumn,
+                'ascending' => $asc,
+            ]
         ]);
     }
 
