@@ -69,6 +69,8 @@ class Content implements ApiInterface
             throw new InvalidArgumentException('No more than 100 nomenclatures can be loaded at a time');
         }
 
-        return $this->client->post('content/v1/cards/filter', $vendorCodes);
+        return $this->client->post('content/v1/cards/filter', [
+            'vendorCodes' => $vendorCodes
+        ]);
     }
 }
