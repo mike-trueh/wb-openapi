@@ -32,15 +32,7 @@ class Content implements ApiInterface
      */
     public function cardsList(int $limit = 10, int $offset = 0, string $searchValue = '', string $sortColumn = 'updateAt', bool $asc = false): ?array
     {
-        return $this->client->post('content/v1/cards/list', [
-            'sort' => [
-                'limit' => $limit,
-                'offset' => $offset,
-                'searchValue' => $searchValue,
-                'sortColumn' => $sortColumn,
-                'ascending' => $asc,
-            ]
-        ]);
+        return $this->client->post('content/v1/cards/list', ['sort' => ['limit' => $limit, 'offset' => $offset, 'searchValue' => $searchValue, 'sortColumn' => $sortColumn, 'ascending' => $asc,]]);
     }
 
     /**
@@ -69,8 +61,21 @@ class Content implements ApiInterface
             throw new InvalidArgumentException('No more than 100 nomenclatures can be loaded at a time');
         }
 
-        return $this->client->post('content/v1/cards/filter', [
-            'vendorCodes' => $vendorCodes
-        ]);
+        return $this->client->post('content/v1/cards/filter', ['vendorCodes' => $vendorCodes]);
+    }
+
+    /**
+     * Редактирование КТ
+     *
+     * Метод позволяет отредактировать несколько карточек за раз. Редактирование КТ происходит асинхронно, после отправки запрос становится в очередь на обработку.
+     *
+     * **ВАЖНО**: Баркоды (skus) не подлежат удалению или замене. Попытка заменить существующий баркод приведет к добавлению нового баркода к существующему. Номенклатуры, содержащие ошибки, не обновляются и попадают в раздел "Список несозданных НМ с ошибками" с описанием допущенной ошибки. Для того чтобы убрать НМ из ошибочных, необходимо повторно сделать запрос с исправленными ошибками.
+     *
+     * @param array $cards
+     * @return array|null
+     */
+    public function cardsUpdate(array $cards): ?array
+    {
+        return $this->client->post('content/v1/cards/update', $cards);
     }
 }

@@ -46,4 +46,17 @@ class ContentTest extends TestCase
         $this->assertArrayHasKey('data', $result);
         $this->assertCount(1, $result['data']);
     }
+
+    public function testCardsUpdate()
+    {
+        $mock = $this->getMockBuilder(Curl::class)->setConstructorArgs([''])->onlyMethods(['request'])->getMock();
+        $mock->method('request')->willReturn($this->loadResponse('CardsUpdate'));
+
+        $cards = new Content($mock);
+        $result = $cards->cardsUpdate($this->loadRequest('CardsUpdate'));
+
+        $this->assertFalse($result['error']);
+        $this->assertArrayHasKey('data', $result);
+        $this->assertNull($result['data']);
+    }
 }

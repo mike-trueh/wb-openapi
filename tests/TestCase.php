@@ -12,4 +12,13 @@ abstract class TestCase extends BaseTestCase
 
         return json_decode(file_get_contents($path), true);
     }
+
+    public function loadRequest(string $name)
+    {
+        $path = sprintf('%s/Request/%s.json', __DIR__, $name);
+
+        $this->assertFileExists($path);
+
+        return json_decode(file_get_contents($path), true);
+    }
 }
