@@ -20,6 +20,13 @@ _Сделаны только несколько методов из официа
     - cards list
     - cards error list
     - cards filter
+    - cards update
+- supply
+  - get supplies
+    - обертки для метода get supplies:
+      - get active supplies
+      - get delivery supplies
+  - new supply
 
 [Официальная документация](https://openapi.wb.ru)
 
