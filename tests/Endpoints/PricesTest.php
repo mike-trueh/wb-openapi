@@ -9,20 +9,32 @@ use WbOpenApi\Endpoints\Prices;
 
 class PricesTest extends TestCase
 {
+    /**
+     * @return int[][]
+     */
+    public function invalidInfoValues(): array
+    {
+        return [[-1], [3]];
+    }
+
+    /**
+     * @dataProvider invalidInfoValues
+     */
+    public function testInfoWithErrors($invalidInfoValue)
+    {
+        $mock = $this->getMockBuilder(Curl::class)->setConstructorArgs([''])->onlyMethods(['request'])->getMock();
+        $mock->method('request')->willReturn($this->loadResponse('PricesInfo'));
+
+        $this->expectException(InvalidArgumentException::class);
+        (new Prices($mock))->info($invalidInfoValue);
+    }
+
     public function testInfo()
     {
         $mock = $this->getMockBuilder(Curl::class)->setConstructorArgs([''])->onlyMethods(['request'])->getMock();
         $mock->method('request')->willReturn($this->loadResponse('PricesInfo'));
 
-        $priceInfo = new Prices($mock);
-
-        $this->expectException(InvalidArgumentException::class);
-        $priceInfo->info(-1);
-
-        $this->expectException(InvalidArgumentException::class);
-        $priceInfo->info(3);
-
-        $result = $priceInfo->info();
+        $result = (new Prices($mock))->info();
         $this->assertEquals([["nmId" => 1234567, "price" => 1000, "discount" => 10, "promoCode" => 5]], $result);
     }
 
