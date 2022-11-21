@@ -53,7 +53,8 @@ var_dump($prices->info(1));
 **Incomes. Поставки**
 
 ``` php
-$client = new \WbOpenApi\Client\CurlStats('API_KEY');
+// STATISTICS_TOKEN Используется отдельный токен статистики
+$client = new \WbOpenApi\Client\CurlStats('STATISTICS_TOKEN');
 $supplier = new \WbOpenApi\Endpoints\Statistics($client);
 
 var_dump($supplier->incomes(new DateTime()));
