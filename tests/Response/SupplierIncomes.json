@@ -1,0 +1,17 @@
+[
+    {
+        "incomeId": 12345,
+        "number": "",
+        "date": "2022-05-08T00:00:54",
+        "lastChangeDate": "2022-05-08T00:44:15.5",
+        "supplierArticle": "ABCDEF",
+        "techSize": "0",
+        "barcode": "2000328074123",
+        "quantity": 3,
+        "totalPrice": 0,
+        "dateClose": "2022-05-08T00:00:00",
+        "warehouseName": "Подольск",
+        "nmId": 1234567,
+        "status": "Принято"
+    }
+]

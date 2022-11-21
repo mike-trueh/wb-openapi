@@ -1,0 +1,23 @@
+[
+    {
+        "date": "2022-03-02T14:34:05",
+        "lastChangeDate": "2022-03-02T19:30:16",
+        "supplierArticle": "12345",
+        "techSize": "0",
+        "barcode": "9990016520011",
+        "totalPrice": 120.56,
+        "discountPercent": 0,
+        "warehouseName": "Екатеринбург",
+        "oblast": "Московская",
+        "incomeID": 123456,
+        "odid": 12345678,
+        "nmId": 12345678,
+        "subject": "Респираторы",
+        "category": "Спецодежда и СИЗы",
+        "brand": "wildberries",
+        "isCancel": false,
+        "cancel_dt": "0001-01-01T00:00:00",
+        "gNumber": "12345678",
+        "sticker": ""
+    }
+]
