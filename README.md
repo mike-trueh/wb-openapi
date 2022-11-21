@@ -13,32 +13,50 @@ $ composer require mike-trueh/wb-openapi
 
 _Сделаны только несколько методов из официальной документации_
 
-- prices
+- Prices
     - info
     - prices
-- content
+- Content
     - cards list
     - cards error list
     - cards filter
     - cards update
-- supply
-  - get supplies
-    - обертки для метода get supplies:
-      - get active supplies
-      - get delivery supplies
-  - new supply
+- Supply
+    - get supplies
+        - обертки для метода get supplies:
+            - get active supplies
+            - get delivery supplies
+    - new supply
+- Statistics. **Клиент - CurlStats** [см. пример](#примеры-работы-с-методами-статистики)
+    - incomes
+    - stocks
+    - orders
+    - sales
+    - reportDetailByPeriod
+    - exciseGoods
 
 [Официальная документация](https://openapi.wb.ru)
 
 ## Примеры
 
-**incomes**
+**Prices. Получение информации о ценах**
 
 ``` php
-$client = new WbOpenApi\Client\Curl('API_KEY');
-$prices = new WbOpenApi\Endpoints\Prices($client);
+$client = new \WbOpenApi\Client\Curl('API_KEY');
+$prices = new \WbOpenApi\Endpoints\Prices($client);
 
 var_dump($prices->info(1));
+```
+
+### Примеры работы с методами статистики
+
+**Incomes. Поставки**
+
+``` php
+$client = new \WbOpenApi\Client\CurlStats('API_KEY');
+$supplier = new \WbOpenApi\Endpoints\Statistics($client);
+
+var_dump($supplier->incomes(new DateTime()));
 ```
 
 ## Тестирование

@@ -1,0 +1,25 @@
+[
+    {
+        "lastChangeDate": "2022-04-28T05:57:24.787",
+        "supplierArticle": "12345",
+        "techSize": "48",
+        "barcode": "",
+        "quantity": 0,
+        "isSupply": false,
+        "isRealization": true,
+        "quantityFull": 3,
+        "quantityNotInOrders": 3,
+        "warehouse": 1,
+        "warehouseName": "Коледино",
+        "inWayToClient": 3,
+        "inWayFromClient": 0,
+        "nmId": 1234567,
+        "subject": "Брюки",
+        "category": "Одежда",
+        "daysOnSite": 0,
+        "brand": "M",
+        "SCCode": "3200-1234",
+        "Price": 5000,
+        "Discount": 0
+    }
+]
