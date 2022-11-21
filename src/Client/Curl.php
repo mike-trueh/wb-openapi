@@ -14,7 +14,7 @@ class Curl implements OpenApiClientInterface
     /**
      * @var string
      */
-    private $apiKey;
+    protected $apiKey;
 
     /**
      * @param string $apiKey
