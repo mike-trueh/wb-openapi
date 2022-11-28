@@ -1,7 +1,7 @@
-# Wildberries OpenApi 1.1
+# Wildberries OpenApi 1.4
 
 Wildberries OpenApi - PHP SDK пакет для взаимодействия с
-API Продавца v1.1 [Wildberries](https://openapi.wb.ru)
+API Продавца v1.4 [Wildberries](https://openapi.wb.ru)
 
 ## Установка
 
@@ -17,7 +17,8 @@ _Сделаны только несколько методов из официа
     - info
     - prices
 - Content
-    - cards list
+    - ~~cards list~~ Устаревший метод, вместо него нужно использовать cardsCursorList
+    - cards cursor list
     - cards error list
     - cards filter
     - cards update
