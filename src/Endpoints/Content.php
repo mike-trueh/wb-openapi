@@ -56,18 +56,20 @@ class Content implements ApiInterface
         }
 
         return $this->client->post('content/v1/cards/cursor/list', [
-            'cursor' => [
-                'updatedAt' => $updatedAt,
-                'nmID' => $nmID,
-                'limit' => $limit
-            ],
-            'filter' => [
-                'textSearch' => $textSearch,
-                'withPhoto' => $withPhoto,
-            ],
             'sort' => [
-                'sortColumn' => $sortColumn,
-                'ascending' => $asc
+                'cursor' => [
+                    'updatedAt' => $updatedAt,
+                    'nmID' => $nmID,
+                    'limit' => $limit
+                ],
+                'filter' => [
+                    'textSearch' => $textSearch,
+                    'withPhoto' => $withPhoto,
+                ],
+                'sort' => [
+                    'sortColumn' => $sortColumn,
+                    'ascending' => $asc
+                ]
             ]
         ]);
     }
