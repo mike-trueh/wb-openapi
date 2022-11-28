@@ -21,6 +21,21 @@ class ContentTest extends TestCase
         $this->assertCount(1, $result['data']['cards']);
     }
 
+    public function testCardsCursorList()
+    {
+        $mock = $this->getMockBuilder(Curl::class)->setConstructorArgs([''])->onlyMethods(['request'])->getMock();
+        $mock->method('request')->willReturn($this->loadResponse('CardsCursorList'));
+
+        $cards = new Content($mock);
+        $result = $cards->cardsCursorList();
+
+        $this->assertFalse($result['error']);
+        $this->assertArrayHasKey('data', $result);
+        $this->assertArrayHasKey('cursor', $result['data']);
+        $this->assertArrayHasKey('cards', $result['data']);
+        $this->assertCount(1, $result['data']['cards']);
+    }
+
     public function testCardsErrorList()
     {
         $mock = $this->getMockBuilder(Curl::class)->setConstructorArgs([''])->onlyMethods(['request'])->getMock();
